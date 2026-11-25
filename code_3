@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n;
+    const int MAX_SIZE = 40;
+
+    cout << "Enter square side size n (from 2 to " << MAX_SIZE << "): ";
+    cin >> n;
+
+    if (n <= 1) {
+        cout << "Error: Side size must be greater than 1." << endl;
+        return 1;
+    }
+    if (n > MAX_SIZE) {
+        cout << "Error: Side size is too large for the screen (max " << MAX_SIZE << ")." << endl;
+        return 1;
+    }
+
+    // Верхня межа
+    cout << '+';
+    for (int i = 0; i < n - 2; i++) {
+        cout << '-';
+    }
+    cout << '+' << endl;
+
+    // Бічні сторони
+    for (int i = 0; i < n - 2; i++) {
+        cout << '|';
+        for (int j = 0; j < n - 2; j++) {
+            cout << ' ';
+        }
+        cout << '|' << endl;
+    }
+
+    // Нижня межа
+    cout << '+';
+    for (int i = 0; i < n - 2; i++) {
+        cout << '-';
+    }
+    cout << '+' << endl;
+
+    cout << "Press Enter to exit...";
+    cin.ignore();
+    cin.get();
+    return 0;
+}
