@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    long long c0;
+    int steps = 0;
+
+    cout << "Enter a natural number c0 (e.g. 15 or 1023): ";
+    cin >> c0;
+
+    if (c0 <= 0) {
+        cout << "Error: c0 must be a positive non-zero integer." << endl;
+        return 1;
+    }
+
+    while (c0 != 1) {
+        if (c0 % 2 == 0) {
+            c0 = c0 / 2;
+        } else {
+            c0 = 3 * c0 + 1;
+        }
+        cout << c0 << endl;
+        steps++;
+    }
+
+    cout << "steps = " << steps << endl;
+
+    cout << "Press Enter to exit...";
+    cin.ignore();
+    cin.get();
+    return 0;
+}
